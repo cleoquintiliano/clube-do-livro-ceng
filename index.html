@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Clube do Livro · Colégio Estadual Newton Guimarães</title>
+  <meta name="description" content="Plataforma do Clube do Livro do Colégio Estadual Newton Guimarães (Londrina/PR): estante, cartas do leitor, diário de leitura, rodas de leitura e entrevistas.">
+  <meta name="theme-color" content="#1B365D">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/config.js"></script>
+</head>
+<body>
+  <a class="skip" href="#app">Pular para o conteúdo</a>
+
+  <header class="topbar" id="topbar" hidden>
+    <div class="topbar__in">
+      <a class="brand" href="#/" aria-label="Página inicial">
+        <img src="assets/logo.svg" alt="" width="36" height="36">
+        <span class="brand__txt"><strong data-appname>Clube do Livro</strong><small>Newton Guimarães</small></span>
+      </a>
+      <nav class="mainnav" aria-label="Navegação principal">
+        <a href="#/" data-nav="home">Início</a>
+        <a href="#/explorar" data-nav="explorar">Explorar</a>
+        <a href="#/rodas" data-nav="rodas">Rodas</a>
+        <a href="#/entrevistas" data-nav="entrevistas">Entrevistas</a>
+        <a href="#/trocas" data-nav="trocas" class="pin" title="Fixado: trocas e empréstimos">📌 Trocas</a>
+        <div class="more">
+          <button class="more__btn" aria-haspopup="true" aria-expanded="false">Mais ▾</button>
+          <div class="more__menu" role="menu">
+            <a href="#/biblioteca" role="menuitem">Biblioteca livre</a>
+            <a href="#/podcast" role="menuitem">Podcast</a>
+            <a href="#/tutoriais" role="menuitem">Tutoriais</a>
+            <a href="#/quero-ser-entrevistado" role="menuitem">Quero ser entrevistado!</a>
+            <a href="#/atendimento" role="menuitem">Atendimento ao leitor</a>
+          </div>
+        </div>
+      </nav>
+      <form class="search" role="search" id="globalSearch">
+        <label class="sr" for="q">Buscar obras, autores e leitores</label>
+        <input id="q" type="search" placeholder="Buscar obras, autores, leitores…" autocomplete="off">
+      </form>
+      <div class="usermenu">
+        <button class="usermenu__btn" id="userBtn" aria-haspopup="true" aria-expanded="false"></button>
+        <div class="usermenu__menu" id="userMenu" role="menu"></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer class="footer" id="footer" hidden>
+    <div class="footer__in">
+      <div>
+        <strong data-appname>Clube do Livro</strong> · Colégio Estadual Newton Guimarães · Londrina/PR
+        <br><small>Versão <span data-version></span> · Projeto inspirado pelo professor Saulo.</small>
+      </div>
+      <nav aria-label="Rodapé">
+        <a href="#/privacidade">Privacidade e proteção (LGPD/ECA)</a>
+        <a href="#/atendimento">Atendimento ao leitor</a>
+        <a href="#/tutoriais">Tutoriais</a>
+      </nav>
+    </div>
+  </footer>
+
+  <nav class="tabbar" id="tabbar" aria-label="Navegação rápida" hidden>
+    <a href="#/" data-nav="home"><span aria-hidden="true">⌂</span>Início</a>
+    <a href="#/explorar" data-nav="explorar"><span aria-hidden="true">⌕</span>Explorar</a>
+    <a href="#/novo-registro" data-nav="novo-registro" class="tabbar__add" aria-label="Registrar"><span aria-hidden="true">＋</span></a>
+    <a href="#/rodas" data-nav="rodas"><span aria-hidden="true">◎</span>Rodas</a>
+    <a href="#/eu" data-nav="perfil"><span aria-hidden="true">☺</span>Perfil</a>
+  </nav>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__x" data-close aria-label="Fechar">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
